@@ -23,6 +23,10 @@ export default function Footer() {
           </ButtonHighlight>
           <ButtonHighlight url="/precios"
           >
+            Portfolio
+          </ButtonHighlight>
+          <ButtonHighlight url="/portfolio"
+          >
             Precios
           </ButtonHighlight>
           <ButtonHighlight url="/socios"
