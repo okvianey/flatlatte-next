@@ -1,15 +1,29 @@
 import { portfolioItems } from "@/assets/portfolio-items"
+import ButtonIconL from "@/components/ui/ButtonIconL"
 
-export default async function Page({ params }) {
-  const { slug } = await params
-  console.log(slug)
-   // Encontrar el proyecto específico
-  const project = portfolioItems.find(item => 
-    item.slug === slug || item.title.toLowerCase().replace(/\s+/g, '-') === slug
-  )
+
+// Función para extraer slug del href
+function getSlugFromHref(href) {
+  return href.replace('/portfolio/', '').replace('/', '');
+}
+
+export async function generateStaticParams() {
+  return portfolioItems.map(item => ({
+    slug: getSlugFromHref(item.href)
+  }));
+}
+
+
+export default async function PortfolioPage({ params }) {
+  const { slug } = await params;
+
+  const portfolioItem = portfolioItems.find(item => 
+    item.slug === slug || 
+    item.href.replace('/portfolio/', '').replace('/', '') === slug
+  );
 
   // Si no se encuentra el proyecto
-  if (!project) {
+  if (!portfolioItem) {
     return (
       <div className="section">
         <div className="container">
@@ -25,28 +39,23 @@ export default async function Page({ params }) {
       <div className="container">
         {/* Header del proyecto */}
         <div className="mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">{project.title}</h1>
-          <p className="text-xl text-gray-600">{project.description}</p>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">{portfolioItem.title}</h1>
+          <p className="text-xl text-gray-600">{portfolioItem.description}</p>
         </div>
 
-        {/* Imagen del proyecto */}
-        {project.img && (
-          <div className="h-100 bg-cover bg-center" style={{backgroundImage:`url(${project.img})`}} />
-        )}
 
         {/* Detalles del proyecto */}
         <div className="grid md:grid-cols-2 gap-8">
           <div>
             <h2 className="text-2xl font-semibold mb-4">Sobre el proyecto</h2>
             <p className="text-gray-700 leading-relaxed">
-              {project.longDescription || project.description}
+              {portfolioItem.longDescription || portfolioItem.description}
             </p>
-          </div>
 
-          <div>
-            <h2 className="text-2xl font-semibold mb-4">Tecnologías</h2>
+            {/* Tecnologías */}
+            <h3 className="text-xl font-semibold mb-4">Tecnologías</h3>
             <div className="flex flex-wrap gap-2">
-              {project.tags?.map((tech, index) => (
+              {portfolioItem.tags?.map((tech, index) => (
                 <span 
                   key={index}
                   className="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm font-medium"
@@ -57,23 +66,23 @@ export default async function Page({ params }) {
             </div>
 
             {/* Enlaces del proyecto */}
-            {(project.url || project.githubUrl) && (
+            {(portfolioItem.url || portfolioItem.githubUrl) && (
               <div className="mt-6">
                 <h3 className="text-xl font-semibold mb-3">Enlaces</h3>
                 <div className="flex gap-4">
-                  {project.url && (
+                  {portfolioItem.url && (
                     <a 
-                      href={project.url}
+                      href={portfolioItem.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-amber-500 hover:bg-amber-600 text-white px-6 py-2 rounded-lg font-medium transition-colors"
+                      className="btn btn-accent"
                     >
                       Ver Demo
                     </a>
                   )}
-                  {project.githubUrl && (
+                  {portfolioItem.githubUrl && (
                     <a 
-                      href={project.githubUrl}
+                      href={portfolioItem.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="border border-gray-300 hover:border-amber-500 text-gray-700 hover:text-amber-600 px-6 py-2 rounded-lg font-medium transition-colors"
@@ -85,7 +94,19 @@ export default async function Page({ params }) {
               </div>
             )}
           </div>
+
+          <div>
+             {/* Imagen del proyecto */}
+            {portfolioItem.img && (
+              <div className="h-100 bg-cover bg-top bg-no-repeat" style={{backgroundImage:`url(${portfolioItem.img})`}} />
+            )}
+
+            
+          </div>
         </div>
+         <div className="my-10 border-b border-gray-200"></div>
+
+        <ButtonIconL url="/portfolio" icon={""}>Volver al portfolio</ButtonIconL>
       </div>
     </div>
   )

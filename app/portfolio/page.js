@@ -1,9 +1,8 @@
-import CardProject from "@/components/ui/CardProject";
+import CardProject from "@/components/ui/CardProject"
 import { portfolioItems } from '@/assets/portfolio-items'
-import ButtonLine from "@/components/ui/ButtonLine";
+import ButtonIconL from "@/components/ui/ButtonIconL"
 
 export default function Portfolio() {
-  // usa tus capturas en /public/assets/img/uploads/...
 
   return (
     <section id="portfolio" className="section">
@@ -23,7 +22,7 @@ export default function Portfolio() {
 
         <div className="my-10 border-b border-gray-200"></div>
 
-        <ButtonLine url="/">Volver al inicio</ButtonLine>
+        <ButtonIconL url="/" icon={""}>Volver al inicio</ButtonIconL>
 
       </div>
     </section>
