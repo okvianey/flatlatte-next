@@ -1,0 +1,45 @@
+# Dependencias
+node_modules/
+/.pnp
+.pnp.js
+.pnp.cjs
+
+# Testing
+/coverage
+
+# Next.js
+/.next/
+/out/
+/docs/ # Se ignora por si acaso
+
+
+# Producción (si usas el método de carpeta /docs, NO ignores /docs)
+# /docs/  # ⚠️ NO ignores esta línea si usas el método /docs
+
+# Misc
+.DS_Store
+*.pem
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Variables de entorno
+.env*.local
+.env
+
+# Vercel
+.vercel
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+logs
+*.log
