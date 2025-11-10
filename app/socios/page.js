@@ -1,7 +1,10 @@
 'use client';
 
-import Link from 'next/link';
-import { useState } from 'react';
+import Image from 'next/image'
+import Link from 'next/link'
+import { useState } from 'react'
+import imgAbout from '@/public/assets/img/flatlatte-v.webp'
+import imgServices from '@/public/assets/img/img_v_1.webp'
 
 export default function Socios() {
   const [openFaq, setOpenFaq] = useState(null);
@@ -72,7 +75,7 @@ export default function Socios() {
       {/* About Section */}
       <section id="about" className="about section py-20">
         <div className="container">
-          <div className="flex flex-col lg:flex-row items-start gap-12">
+          <div className="flex flex-col lg:flex-row gap-12">
             <div className="lg:w-7/12 order-2 lg:order-1">
               <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-8 leading-snug" data-aos="fade-up">
                 ¿Eres diseñador, fotógrafo, community manager?
@@ -89,11 +92,18 @@ export default function Socios() {
             </div>
 
             <div 
-              className="lg:w-5/12 order-1 lg:order-2 h-80 lg:h-96 bg-cover bg-center rounded-2xl shadow-lg"
-              style={{ backgroundImage: "url('/assets/img/flatlatte-v.webp')" }}
+              className="relative lg:w-5/12 order-1 lg:order-2 h-80 lg:h-96 rounded-2xl shadow-lg"
               data-aos="fade-up"
               data-aos-delay="200"
-            ></div>
+            >
+              <Image 
+                src={imgAbout}
+                alt='img'
+                fill
+                className="object-cover rounded-2xl"   
+            />
+            </div>
+            
           </div>
         </div>
       </section>
@@ -179,10 +189,16 @@ export default function Socios() {
         <div className="container">
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <div 
-              className="lg:w-2/5 h-80 bg-cover bg-center rounded-2xl shadow-lg"
-              style={{ backgroundImage: "url('/assets/img/img_v_1.webp')" }}
+              className="relative lg:w-2/5 w-full h-80 rounded-2xl shadow-lg"
               data-aos="fade-up"
-            ></div>
+            >
+              <Image 
+                src={imgServices}
+                alt='img'
+                fill
+                className='object-cover rounded-2xl'
+              />
+            </div>
 
             <div className="lg:w-3/5" data-aos="fade-up">
               <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">

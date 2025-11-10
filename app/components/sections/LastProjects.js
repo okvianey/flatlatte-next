@@ -1,5 +1,7 @@
 import { portfolioItems } from "@/assets/portfolio-items"
 import Link from "next/link"
+import Image from "next/image"
+
 export default function LastProjects() {
 
   const showProjects = portfolioItems.filter((item) => item.showHome.length > 0)
@@ -13,21 +15,30 @@ export default function LastProjects() {
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {showProjects.map((it)=>(
-            <a key={it.title} href={it.href}
+            <Link
+              key={it.title}
+              href={it.href}
               className="block bg-white rounded overflow-hidden shadow group transition ease-in-out duration-300 transform hover:scale-[1.03]"
             >
               <div
-                className="h-100 bg-cover bg-center group filter-none sm:filter saturate-50 group-hover:filter-none"
-                style={{ backgroundImage: `url(${it.img})` }} />
+                className="relative h-100 group filter-none sm:filter saturate-50 group-hover:filter-none"
+              >
+                <Image
+                  src={it.img}
+                  alt="img portfolio"
+                  fill
+                  className="object-cover"
+                />  
+              </div>
               <div className="p-4">
                 <h3 className="font-semibold">{it.title}</h3>
                 <div className="text-xs text-[var(--accent)]">{it.type}</div>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
         <div className="mt-8 text-center">
-          <Link href="/portafolio" className="btn btn-primary">Ver más</Link>
+          <Link href="/proyectos" className="btn btn-primary">Ver más</Link>
         </div>
       </div>
     </section>

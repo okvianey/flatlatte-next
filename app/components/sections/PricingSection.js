@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
+import imgLinktree from '@/public/assets/img/mockup-linktree-800.png';
 
 export default function PricingSection() {
   const pricingPlans = [
@@ -221,9 +223,14 @@ export default function PricingSection() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             <div
-              className="h-100 bg-contain bg-center bg-no-repeat rounded-2xl overflow-hidden transform hover:scale-[1.02] transition-transform duration-300"
-                style={{ backgroundImage: "url('/assets/img/mockup-linktree-800.png')" }}
+              className="relative w-full h-full rounded-2xl overflow-hidden transform hover:scale-[1.02] transition-transform duration-300"
             >
+              <Image
+                src={imgLinktree}
+                alt="linktree img"
+                fill
+                className="rounded-2xl object-contain"
+              />
             </div>
 
             <div className="bg-white rounded-2xl shadow-sm p-8 border border-gray-100">

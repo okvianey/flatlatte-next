@@ -1,10 +1,12 @@
+import Image from "next/image"
 import Link from "next/link"
+import imgHero from "@/public/assets/img/flatlatte-v.webp"
 
 export default function Hero(){
   return (
     <section className="pb-10 xl:pb-24 bg-[var(--bg)] h-screen flex items-end">
-      <div className="container flex flex-col lg:flex-row justify-center lg:justify-center gap-8">
-        <div className="flex-1">
+      <div className="container flex flex-col md:flex-row justify-center lg:justify-center gap-4">
+        <div className="flex-2 md:flex-1">
           <h1 className="text-6xl sm:text-8xl tracking-tight">
             Tu cafetería tiene algo que merece ser visto.
           </h1>
@@ -18,8 +20,15 @@ export default function Hero(){
           </div>
         </div>
 
-        <div className="flex-1 hidden lg:flex w-full bg-cover bg-no-repeat bg-center rounded-lg shadow" style={{ backgroundImage: "url('assets/img/flatlatte-v.webp')" }} 
-        />
+        <div className="flex-1 relative hidden lg:block w-full rounded-lg">
+          <Image
+            src={imgHero}
+            alt="hero flatlatte"
+            fill
+            className="rounded-lg shadow object-cover"
+          />
+
+        </div>
        
       </div>
     </section>

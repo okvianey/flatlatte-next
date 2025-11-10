@@ -1,6 +1,7 @@
 import Link from "next/link";
 import ButtonIconL from "./components/ui/ButtonIconL";
 import Image from "next/image";
+import img404 from "@/public/assets/img/404.png";
 
 export default function NotFoundPage() {
   return (
@@ -13,7 +14,7 @@ export default function NotFoundPage() {
               <div className="relative">
                 <Image
                   className="img-fluid filter grayscale w-64 lg:w-80 hover:grayscale-0 transition-all duration-500"
-                  src="/assets/img/404.png"
+                  src={ img404 }
                   alt="Página no encontrada - Error 404"
                   width={80}
                   height={80}
@@ -56,7 +57,7 @@ export default function NotFoundPage() {
           <div className="mt-20 text-center" data-aos="fade-up">
             <p className=" mb-6">También puedes visitar:</p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/portafolio" className="text-gray-700 btn-highlight">Portafolio</Link>
+              <Link href="/proyectos" className="text-gray-700 btn-highlight">Proyectos</Link>
               <span className="text-gray-400">•</span>
               <Link href="/precios" className="text-gray-700 btn-highlight">Precios</Link>
               <span className="text-gray-400">•</span>

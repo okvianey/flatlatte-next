@@ -1,10 +1,11 @@
 import { portfolioItems } from "@/assets/portfolio-items"
 import ButtonIconL from "@/components/ui/ButtonIconL"
+import Image from "next/image";
 
 
 // Función para extraer slug del href
 function getSlugFromHref(href) {
-  return href.replace('/portafolio/', '').replace('/', '');
+  return href.replace('/proyectos/', '').replace('/', '');
 }
 
 export async function generateStaticParams() {
@@ -17,9 +18,9 @@ export async function generateStaticParams() {
 export default async function PortfolioPage({ params }) {
   const { slug } = await params;
 
-  const portfolioItem = portfolioItems.find(item => 
-    item.slug === slug || 
-    item.href.replace('/portafolio/', '').replace('/', '') === slug
+  const portfolioItem = portfolioItems.find(item =>
+    item.slug === slug ||
+    item.href.replace('/proyectos/', '').replace('/', '') === slug
   );
 
   // Si no se encuentra el proyecto
@@ -56,7 +57,7 @@ export default async function PortfolioPage({ params }) {
             <h3 className="text-xl font-semibold mb-4">Tecnologías</h3>
             <div className="flex flex-wrap gap-2">
               {portfolioItem.tags?.map((tech, index) => (
-                <span 
+                <span
                   key={index}
                   className="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm font-medium"
                 >
@@ -71,7 +72,7 @@ export default async function PortfolioPage({ params }) {
                 <h3 className="text-xl font-semibold mb-3">Enlaces</h3>
                 <div className="flex gap-4">
                   {portfolioItem.url && (
-                    <a 
+                    <a
                       href={portfolioItem.url}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -81,7 +82,7 @@ export default async function PortfolioPage({ params }) {
                     </a>
                   )}
                   {portfolioItem.githubUrl && (
-                    <a 
+                    <a
                       href={portfolioItem.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -96,17 +97,24 @@ export default async function PortfolioPage({ params }) {
           </div>
 
           <div>
-             {/* Imagen del proyecto */}
+            {/* Imagen del proyecto */}
             {portfolioItem.img && (
-              <div className="h-100 bg-cover bg-top bg-no-repeat" style={{backgroundImage:`url(${portfolioItem.img})`}} />
+              <div className=" relative h-100">
+                <Image
+                  src={portfolioItem.img}
+                  alt={`${portfolioItem.title} - portfolio project`}
+                  fill
+                  className="object-cover object-top"
+                />  
+              </div>
             )}
 
-            
+
           </div>
         </div>
-         <div className="my-10 border-b border-gray-200"></div>
+        <div className="my-10 border-b border-gray-200"></div>
 
-        <ButtonIconL url="/portafolio" icon={""}>Volver al portafolio</ButtonIconL>
+        <ButtonIconL url="/proyectos" icon={""}>Volver al portafolio</ButtonIconL>
       </div>
     </div>
   )
