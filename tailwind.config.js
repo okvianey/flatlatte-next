@@ -16,7 +16,7 @@ module.exports = {
         'espresso': '#5C4033'
       },
       fontFamily: {
-         heading: ['Poppins', 'ui-sans-serif', 'system-ui'],
+        heading: ['Poppins', 'ui-sans-serif', 'system-ui'],
         mono: ['"IBM Plex Mono"', 'ui-monospace', 'monospace']
       }
     },

@@ -1,8 +1,8 @@
 import { JetBrains_Mono, IBM_Plex_Sans, Mona_Sans } from "next/font/google";
-import "./styles/globals.css";
-import AOSProvider from './components/ui/AOSProvider';
-import Header from "./components/sections/Header";
-import Footer from "./components/sections/Footer";
+import "@/globals.css";
+import AOSProvider from '@/components/ui/AOSProvider';
+import Header from "@/components/sections/Header";
+import Footer from "@/components/sections/Footer";
 
 export const metadata = {
   title: 'Flatlatte - Desarrollo Web',
