@@ -69,7 +69,7 @@ export const portfolioItems = [
     tags: [ 'html/css', 'javascript', 'bootstrap' ],
     img: portfolioImages['algodon.jpg'],
     href: '/proyectos/algodon-de-azucar/',
-    url: 'https://himnapp.flatlatte.com/',
+    url: 'https://algodondeazucar.flatlatte.com/',
     showHome: ''
   },
   {
