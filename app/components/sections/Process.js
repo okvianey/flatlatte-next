@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Process(){
   return (
     <section id="process" className="section bg-[var(--bg)]">
@@ -26,7 +28,7 @@ export default function Process(){
           </div>
         </div>
         <div className="mt-8">
-          <a href="/precios" className="btn btn-primary">Quiero mi sitio</a>
+          <Link href="/precios" className="btn btn-primary">Quiero mi sitio</Link>
         </div>
       </div>
     </section>

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function WeLoveMinimal() {
   const loveItems = [
     "Del café recién molido",
@@ -61,14 +63,14 @@ export default function WeLoveMinimal() {
             Si amas lo que haces tanto como nosotros, tenemos mucho en común.
           </p>
           <div data-aos="fade-up" data-aos-delay="200">
-            <a 
+            <Link 
               href="/contacto" 
               className="bg-white text-coffee px-10 py-4 rounded-full hover:bg-gray-100 transition-all duration-300 inline-flex items-center space-x-3 text-lg font-bold hover:scale-105 shadow-2xl"
             >
               <span>✨</span>
               <span>Hablemos de proyectos</span>
               <span>→</span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

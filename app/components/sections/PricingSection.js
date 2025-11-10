@@ -261,12 +261,12 @@ export default function PricingSection() {
                 ))}
               </ul>
 
-              <a
+              <Link
                 href="/precios#cotizador"
                 className="w-full btn bg-green-600 !text-white py-3 px-6 rounded-lg font-medium text-center block hover:bg-green-700 transition-colors duration-200"
               >
                 Crear mi Portfolio Link
-              </a>
+              </Link>
             </div>
           </div>
         </div>

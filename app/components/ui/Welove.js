@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function WeLove() {
   const loveItems = [
     {
@@ -68,13 +70,13 @@ export default function WeLove() {
           </p>
 
           <div data-aos="fade-up" data-aos-delay="500">
-            <a 
+            <Link 
               href="/contacto" 
               className="btn-get-started bg-coffee text-white px-8 py-4 rounded-full hover:bg-coffee-dark transition-all duration-300 inline-flex items-center space-x-2 text-lg font-semibold hover:scale-105 shadow-lg hover:shadow-xl"
             >
               <span>🤝</span>
               <span>Hagamos equipo</span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

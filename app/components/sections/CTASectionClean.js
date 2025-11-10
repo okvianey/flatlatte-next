@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function CTASectionClean() {
   return (
     <section id="cta" className="py-24 bg-gray-900 text-white">
@@ -22,7 +24,7 @@ export default function CTASectionClean() {
 
           {/* CTA simple y elegante */}
           <div data-aos="fade-up" data-aos-delay="100">
-            <a
+            <Link
               href="/contacto-socio-flat-latte"
               className="
                 inline-block
@@ -36,7 +38,7 @@ export default function CTASectionClean() {
               "
             >
               Quiero ser socio
-            </a>
+            </Link>
           </div>
 
           {/* Texto secundario sutil */}

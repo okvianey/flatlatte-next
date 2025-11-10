@@ -1,4 +1,5 @@
 import 'bootstrap-icons/font/bootstrap-icons.css'
+import Link from 'next/link'
 
 export default function About() {
   return (
@@ -29,7 +30,7 @@ export default function About() {
         </div>
 
         <div className="mt-10">
-          <a href="/precios" className="btn btn-primary">Quiero mi sitio web</a>
+          <Link href="/precios" className="btn btn-primary">Quiero mi sitio web</Link>
         </div>
       </div>
     </section>
