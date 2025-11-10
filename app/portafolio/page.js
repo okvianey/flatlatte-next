@@ -2,7 +2,7 @@ import CardProject from "@/components/ui/CardProject"
 import { portfolioItems } from '@/assets/portfolio-items'
 import ButtonIconL from "@/components/ui/ButtonIconL"
 
-export default function Portfolio() {
+export default function Portafolio() {
 
   return (
     <section id="portfolio" className="section">

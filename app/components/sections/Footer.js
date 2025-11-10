@@ -22,9 +22,9 @@ export default function Footer() {
             Sobre mi
           </ButtonHighlight>
 
-          <ButtonHighlight url="/portfolio"
+          <ButtonHighlight url="/portafolio"
           >
-            Portfolio
+            Portafolio
           </ButtonHighlight>
           <ButtonHighlight url="/precios"
           >

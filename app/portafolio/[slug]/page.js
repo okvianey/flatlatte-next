@@ -4,7 +4,7 @@ import ButtonIconL from "@/components/ui/ButtonIconL"
 
 // Función para extraer slug del href
 function getSlugFromHref(href) {
-  return href.replace('/portfolio/', '').replace('/', '');
+  return href.replace('/portafolio/', '').replace('/', '');
 }
 
 export async function generateStaticParams() {
@@ -19,7 +19,7 @@ export default async function PortfolioPage({ params }) {
 
   const portfolioItem = portfolioItems.find(item => 
     item.slug === slug || 
-    item.href.replace('/portfolio/', '').replace('/', '') === slug
+    item.href.replace('/portafolio/', '').replace('/', '') === slug
   );
 
   // Si no se encuentra el proyecto
@@ -106,7 +106,7 @@ export default async function PortfolioPage({ params }) {
         </div>
          <div className="my-10 border-b border-gray-200"></div>
 
-        <ButtonIconL url="/portfolio" icon={""}>Volver al portfolio</ButtonIconL>
+        <ButtonIconL url="/portafolio" icon={""}>Volver al portafolio</ButtonIconL>
       </div>
     </div>
   )

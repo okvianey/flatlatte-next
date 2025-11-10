@@ -56,7 +56,7 @@ export default function NotFoundPage() {
           <div className="mt-20 text-center" data-aos="fade-up">
             <p className=" mb-6">También puedes visitar:</p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/portfolio" className="text-gray-700 btn-highlight">Portfolio</Link>
+              <Link href="/portafolio" className="text-gray-700 btn-highlight">Portafolio</Link>
               <span className="text-gray-400">•</span>
               <Link href="/precios" className="text-gray-700 btn-highlight">Precios</Link>
               <span className="text-gray-400">•</span>

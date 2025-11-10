@@ -6,7 +6,7 @@ export const portfolioItems = [
     description: '',
     tags: [ 'gatsby', 'mui' ],
     img: '/assets/img/portfolio/himnapp-3.jpg',
-    href: '/portfolio/himnapp/',
+    href: '/portafolio/himnapp/',
     url: 'https://himnapp.flatlatte.com/',
     showHome: '1'
   },
@@ -16,7 +16,7 @@ export const portfolioItems = [
     description: '',
     tags: [ 'html/css', 'javascript', 'nextjs' ],
     img: '/assets/img/portfolio/swmonse-2.jpg',
-    href: '/portfolio/spanish-with-monse/',
+    href: '/portafolio/spanish-with-monse/',
     url: 'https://www.spanishwithmonse.com/',
     showHome: '0'
   },
@@ -26,7 +26,7 @@ export const portfolioItems = [
     description: '',
     tags: [ 'html/css', 'javascript', 'nextjs', 'tailwind' ],
     img: '/assets/img/portfolio/temperamentos-2.jpg',
-    href: '/portfolio/temperamentos/',
+    href: '/portafolio/temperamentos/',
     url: 'https://okvianey.github.io/temperamentos/',
     showHome: ''
   },
@@ -36,7 +36,7 @@ export const portfolioItems = [
     description: '',
     tags: [ 'html/css', 'javascript', 'wordpress' ],
     img: "/assets/img/portfolio/pieb-3.jpg",
-    href: '/portfolio/pieb/',
+    href: '/portafolio/pieb/',
     url: 'https://www.iglesiabautistacoatza.com/',
     showHome: ''
   },
@@ -46,7 +46,7 @@ export const portfolioItems = [
     description: '',
     tags: [ 'html/css', 'javascript', 'bootstrap' ],
     img: "/assets/img/portfolio/himnappweb-3.jpg",
-    href: '/portfolio/himnapp-web/',
+    href: '/portafolio/himnapp-web/',
     url: 'https://okvianey.github.io/himnappweb/',
     showHome: ''
   },
@@ -56,7 +56,7 @@ export const portfolioItems = [
     description: '',
     tags: [ 'html/css', 'javascript', 'bootstrap' ],
     img: "/assets/img/portfolio/sucval.jpg",
-    href: '/portfolio/sucval/',
+    href: '/portafolio/sucval/',
     url: 'https://sucval.flatlatte.com/',
     showHome: ''
   },
@@ -67,7 +67,7 @@ export const portfolioItems = [
     description: '',
     tags: [ 'html/css', 'javascript', 'bootstrap' ],
     img: "/assets/img/portfolio/algodon.jpg",
-    href: '/portfolio/algodon-de-azucar/',
+    href: '/portafolio/algodon-de-azucar/',
     url: 'https://himnapp.flatlatte.com/',
     showHome: ''
   },
@@ -77,7 +77,7 @@ export const portfolioItems = [
     description: '',
     tags: [ 'html/css', 'javascript', 'bootstrap' ],
     img: "/assets/img/portfolio/los-daners-1.jpg",
-    href: '/portfolio/los-daners/',
+    href: '/portafolio/los-daners/',
     url: 'https://losdaners.flatlatte.com/',
     showHome: '2'
   },
@@ -87,7 +87,7 @@ export const portfolioItems = [
     description: '',
     tags: [ 'html/css', 'javascript', 'bootstrap' ],
     img: "/assets/img/portfolio/localespalmitas.jpg",
-    href: '/portfolio/locales-palmitas/',
+    href: '/portafolio/locales-palmitas/',
     url: 'https://localespalmitas.flatlatte.com/',
     showHome: ''
   },

@@ -27,7 +27,7 @@ export default function LastProjects() {
           ))}
         </div>
         <div className="mt-8 text-center">
-          <Link href="/portfolio" className="btn btn-primary">Ver más</Link>
+          <Link href="/portafolio" className="btn btn-primary">Ver más</Link>
         </div>
       </div>
     </section>
