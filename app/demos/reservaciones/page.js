@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import { createReservation } from "./fakeApi";
 import { downloadICS } from "./downloadICS";
 import ReservationsTable from "./ReservationsTable";
+import CalendarMock from "./components/CalendarMock";
+import CalendarProMock from "./components/CalendarProMock";
 
 export default function ReservacionesDemo() {
   const [form, setForm] = useState({
@@ -165,7 +167,9 @@ export default function ReservacionesDemo() {
           <aside>
             <ReservationsTable registros={registros} />
 
-            {confirm ? (
+           
+          {
+            confirm && 
               <div className="bg-white border rounded-lg p-4 shadow-sm mb-6">
                 <h3 className="text-lg font-medium text-[#4B2E23]">Vista demo: Google Calendar</h3>
                 <div className="mt-3 border rounded p-3">
@@ -173,16 +177,21 @@ export default function ReservacionesDemo() {
                     (Simulación) Tu calendario mostrará la nueva reserva en 
                     <b> {confirm.fecha}</b> a las <b>{confirm.hora}</b>.
                   </p>
-                  <div className="mt-3 h-40 rounded bg-white flex items-center justify-center border-dashed border-2 border-gray-200">
-                    <span className="text-sm text-gray-400">Panel de calendario (mock)</span>
+                    <div className="mt-3 w-full h-full rounded bg-white flex items-center justify-center border-dashed border-2 border-gray-200">
+                      {
+                     confirm ?    
+                          <CalendarProMock reserva={confirm} />
+                          : (<div className="text-sm text-gray-400 mb-6">
+                        Aún no hay reservación confirmada para mostrar en la vista previa.
+                      </div>)
+                    } 
+
+                      
                   </div>
                 </div>
-              </div>
-            ) : (
-              <div className="text-sm text-gray-400 mb-6">
-                Aún no hay reservación confirmada para mostrar en la vista previa.
-              </div>
-            )}
+              </div> 
+              }
+            
 
           </aside>
         </div>
