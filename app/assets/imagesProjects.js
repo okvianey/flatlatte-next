@@ -6,6 +6,7 @@ import sucvalImg from '@/public/assets/img/portfolio/sucval.jpg';
 import algodonImg from '@/public/assets/img/portfolio/algodon.jpg';
 import losdanersImg from '@/public/assets/img/portfolio/los-daners-1.jpg';
 import localesPalmitasImg from '@/public/assets/img/portfolio/localespalmitas.jpg';
+import bocanadaImg from '@/public/assets/img/portfolio/bocanada-2.jpg';
 
 
 export const portfolioImages = {
@@ -16,5 +17,6 @@ export const portfolioImages = {
   'sucval.jpg': sucvalImg,
   'algodon.jpg': algodonImg,
   'los-daners-1.jpg': losdanersImg,
-  'localespalmitas.jpg': localesPalmitasImg
+  'localespalmitas.jpg': localesPalmitasImg,
+  'bocanada-2.jpg': bocanadaImg
 };

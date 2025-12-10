@@ -41,16 +41,6 @@ export const portfolioItems = [
     url: 'https://www.iglesiabautistacoatza.com/',
     showHome: ''
   },
-  // {
-  //   title: 'Himnapp Web',
-  //   type: 'web',
-  //   description: '',
-  //   tags: [ 'html/css', 'javascript', 'bootstrap' ],
-  //   img: "./assets/img/portfolio/himnappweb-3.jpg",
-  //   href: '/proyectos/himnapp-web/',
-  //   url: 'https://okvianey.github.io/himnappweb/',
-  //   showHome: ''
-  // },
   {
     title: 'SUCVAL',
     type: 'web',
@@ -80,7 +70,7 @@ export const portfolioItems = [
     img: portfolioImages['los-daners-1.jpg'],
     href: '/proyectos/los-daners/',
     url: 'https://losdaners.flatlatte.com/',
-    showHome: '2'
+    showHome: ''
   },
   {
     title: 'Locales Palmitas',
@@ -91,6 +81,16 @@ export const portfolioItems = [
     href: '/proyectos/locales-palmitas/',
     url: 'https://localespalmitas.flatlatte.com/',
     showHome: ''
+  },
+   {
+    title: 'Bocanada',
+    type: 'app web',
+    description: '',
+    tags: [ 'Next.js', 'Tailwind' ],
+    img: portfolioImages['bocanada-2.jpg'],
+    href: '/proyectos/bocanada/',
+    url: 'https://bocanada.flatlatte.com',
+    showHome: '2'
   },
 ]
 
