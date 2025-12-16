@@ -4,8 +4,8 @@ export default function Contact() {
   return (
     <section id="contact" className="section">
       <div className="container max-w-3xl">
-        <h2 className="text-2xl font-heading mb-4">Hablemos (de tu web, o de café ☕)</h2>
-        <p className="mb-6">
+        <h2 className="subtitle-left">Hablemos (de tu web, o de café ☕)</h2>
+        <p className="mb-6 max-w-3xl">
         Queremos conocer tu proyecto y lo qué te gustaría lograr.
         Cuéntanos un poco y agendemos una charla breve.
         </p>

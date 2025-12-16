@@ -9,8 +9,8 @@ export default function LastProjects() {
   return (
     <section id="last-projects" className="section">
       <div className="container">
-        <h2 className="text-2xl font-heading">Proyectos recién molidos ☕</h2>
-        <p className="mt-6 mb-8">
+        <h2 className="subtitle">Proyectos recién molidos ☕</h2>
+        <p className="mt-6 mb-6 text-start md:text-center">
           	Mira algunos de los Flat Lattes que hemos preparado.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

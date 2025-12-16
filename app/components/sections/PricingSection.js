@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import imgLinktree from '@/public/assets/img/mockup-linktree-800.png';
+import { products } from "@/assets/products";
 
 export default function PricingSection() {
   const pricingPlans = [

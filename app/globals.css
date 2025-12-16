@@ -2,16 +2,23 @@
 @import 'aos/dist/aos.css';
 
 /* ===== VARIABLES ===== */
-:root{
-  --bg: #f5f5f5;
+:root {
+  --bg: #f7f7f7;
   /* --bg: #FAF7F4; */
-  --text-default: #525252;
+  --text-default: #3f3f3f;
   --accent: #4e4e4e;
   --accent-hover: #353535;
   --surface: #ffffff;
   --whatsapp: #5edb9d;
   --coffee: #8B4513;
   --coffee-dark: #654321;
+  --surface-muted: #f1f1f1;
+}
+@theme {
+  --subtitle: var(--subtitle);
+  --color-bg-light: var(--bg);
+  --color-text-default: var(--text-default);
+  --color-surface-muted: var(--surface-muted);
 }
 /* ===== BASE STYLES ===== */
 html, body, #__next {
@@ -19,7 +26,7 @@ html, body, #__next {
 }
 
 body {
-  @apply font-mono font-thin text-lg bg-[var(--bg)] text-[var(--text-default)];
+  @apply font-mono font-normal text-lg bg-[var(--bg)] text-[var(--text-default)];
 }
 
 a {
@@ -32,9 +39,20 @@ h1, h2, h3, h4 {
   color: var(--text-default);
   font-weight: 600;
 }
-
-h2 {
-  @apply text-5xl;
+.main-title {
+  @apply mb-6 mx-auto max-w-2xl text-5xl md:text-6xl font-bold;
+}
+.title {
+  @apply mb-6 mx-auto max-w-2xl text-4xl md:text-5xl font-bold;
+}
+.subtitle {
+  @apply mb-4 mx-auto max-w-2xl text-4xl md:text-5xl;
+}
+.subtitle-left {
+  @apply mb-4 text-4xl md:text-5xl text-left;
+} 
+.subtitle-cotizador h2, .subtitle-cotizador span {
+  @apply text-xl font-semibold;
 }
 
 /* ===== UTILITY CLASSES ===== */
@@ -46,6 +64,9 @@ h2 {
   @apply max-w-6xl mx-auto px-6;
 }
 
+.box-blanca {
+  @apply p-6 bg-white rounded shadow text-center;
+}
 ::selection {
   @apply bg-yellow-200;
 }

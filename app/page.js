@@ -5,6 +5,7 @@ import Process from '@/components/sections/Process'
 import LastProjects from '@/components/sections/LastProjects'
 import Faq from '@/components/sections/Faq'
 import Contact from '@/components/sections/Contact'
+import ProductsSection from '@/components/sections/ProductsSection'
 
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
     <>
       <Hero />
       <About />
+      <ProductsSection />
       <LastProjects />
       <Process />
       <Faq />

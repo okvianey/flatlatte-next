@@ -1,275 +1,343 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useMemo, useEffect } from "react";
+import { products, extras, bundles } from "@/assets/products";
 
-export default function Cotizador() {  
-  const [selectedPackage, setSelectedPackage] = useState(null);
-  const [extras, setExtras] = useState([]);
-  const [total, setTotal] = useState(0);
-  const [ selectedPackageLabel, setSelectedPackageLabel ] = useState();
+export default function Cotizador() {
+  const [base, setBase] = useState(products[0]);
+  const [selectedExtras, setSelectedExtras] = useState([]);
+  const [bundleActive, setBundleActive] = useState(false);
+  const bundle = bundles.find((b) => b.appliesTo === base.type);
 
-  const packages = [
-    { 
-      value: '1900', 
-      label: 'Portafolio-un-solo-link', 
-      display: '🌿 Portafolio-un-solo-link ($1,900)',
-      features: [
-        'Tarjeta digital (tumarca.flatlatte.com)*',
-        '1 página',
-        'Hasta 3 secciones',
-        'Optimizado para todos los dispositivos',
-        '2 revisiones'
-      ]
-    },
-    { 
-      value: '3500', 
-      label: 'Básico', 
-      display: '🧇 Básico ($3,500)',
-      features: [
-        'Hospedaje y dominio (tumarca.com)*',
-        '1 página',
-        'Hasta 5 secciones',
-        'Optimizado para cualquier dispositivo',
-        'Link a redes sociales',
-        '2 revisiones'
-      ]
-    },
-    { 
-      value: '5100', 
-      label: 'Pro', 
-      display: '🚀 Pro ($5,100)',
-      features: [
-        'Hospedaje y dominio (tumarca.com)*',
-        'Hasta 3 páginas',
-        'Hasta 7 secciones',
-        'Optimizado para cualquier dispositivo',
-        'Link a redes sociales',
-        '3 revisiones',
-        'Autoadministrable'
-      ]
-    },
-    { 
-      value: '9800', 
-      label: 'Tienda Online', 
-      display: '🛒 Tienda Online ($9,800)',
-      features: [
-        'Hospedaje y dominio (tumarca.com)*',
-        'Páginas ilimitadas',
-        'Hasta 7 secciones',
-        'Optimizado para cualquier dispositivo',
-        'Link a redes sociales',
-        'Cambios ilimitados',
-        'Autoadministrable',
-        'Tienda en línea'
-      ]
-    }
-  ];
+  const availableExtras = useMemo(() => {
+    if (!base) return [];
+    return extras.filter((extra) =>
+      base.id.includes("whatsapp")
+        ? extra.availableFor.includes("whatsapp")
+        : extra.availableFor.includes("web")
+    );
+  }, [base]);
 
-  const extraOptions = [
-    {
-      value: '700',
-      label: 'Dominio personalizado', 
-      display: 'Dominio personalizado ($700)', 
-      icon: '🌐'
-    },
-    { value: '1800', 
-      label: 'Sitio autoadministrable', 
-      display: 'Sitio autoadministrable ($1,800)', 
-      icon: '⚙️' 
-    },
-    { value: '1500', 
-      label: 'Blog', 
-      display: 'Blog ($1,500)', 
-      icon: '👩‍💻'
-    },
-    { value: '1500', 
-      label: 'Redacción de contenido', 
-      display: 'Redacción de contenido ($1,500)',
-      icon: '📝'
-    }
-  ];
+  const toggleExtra = (extra) => {
+    setSelectedExtras((prev) => {
+      const exists = prev.some((e) => e.id === extra.id);
 
-  const calculateTotal = () => {
-    let newTotal = parseInt(selectedPackage) || 0;
-    extras.forEach(extra => {
-      newTotal += parseInt(extra.value);
+      const nextExtras = exists
+        ? prev.filter((e) => e.id !== extra.id)
+        : [...prev, extra];
+
+      // 👉 Si el bundle está activo y el usuario quita algo del bundle
+      if (bundleActive && bundle?.extras.includes(extra.id) && exists) {
+        setBundleActive(false);
+      }
+
+      return nextExtras;
     });
-    setTotal(newTotal);
   };
+
+  const [variant, setVariant] = useState("A");
 
   useEffect(() => {
-    calculateTotal();
-  }, [selectedPackage, extras]);
-
-  
-  const handlePackageChange = (e) => {
-    const packageValue = e.target.value;
-    setSelectedPackage(packageValue);
-    
-    const selectedPkg = packages.find(pkg => pkg.value === packageValue);
-    if (selectedPkg) {
-      setSelectedPackageLabel(selectedPkg.label);
-    }
-  };
-
-  const handleExtraChange = (e) => {
-    const { name, checked } = e.target;
-    const extra = extraOptions.find(opt => opt.label === name);
-    
-    if (checked) {
-      setExtras([...extras, extra]);
+    const saved = localStorage.getItem("cta_variant");
+    if (saved) {
+      setVariant(saved);
     } else {
-      setExtras(extras.filter(item => item.label !== name));
+      const v = Math.random() < 0.5 ? "A" : "B";
+      localStorage.setItem("cta_variant", v);
+      setVariant(v);
     }
-  };
+  }, []);
 
-  const getSelectedPackage = () => {
-    return packages.find(pkg => pkg.value === selectedPackage);
-  };
+  useEffect(() => {
+    if (!bundle) return;
 
-  const generateWhatsAppMessage = () => {
-    const selectedPackageObj = getSelectedPackage();
-    let message = `¡Hola! Me interesa cotizar un sitio web:\n\n`;
-    
-    if (selectedPackageObj) {
-      message += `*Paquete:* ${selectedPackageObj.label} ($${parseInt(selectedPackageObj.value).toLocaleString()})\n`;
+    if (bundleActive) {
+      const bundleExtras = extras.filter((e) => bundle.extras.includes(e.id));
+      setSelectedExtras(bundleExtras);
+    } else {
+      setSelectedExtras([]);
     }
-    
-    if (extras.length > 0) {
-      message += `*Extras:* ${extras.map(extra => `${extra.label} ($${parseInt(extra.value).toLocaleString()})`).join(', ')}\n`;
+  }, [bundleActive, base]);
+
+  const total = useMemo(() => {
+    if (bundleActive && bundle) {
+      return base.basePrice + bundle.bundlePrice;
     }
-    
-    message += `\n*Total estimado:* $${total.toLocaleString()} MXN\n\n`;
-    message += `Me gustaría obtener más información.`;
-    
-    return encodeURIComponent(message);
-  };
+
+    return base.basePrice + selectedExtras.reduce((sum, e) => sum + e.price, 0);
+  }, [base, selectedExtras, bundleActive, bundle]);
+
+  const discountAmount = useMemo(() => {
+    if (!bundleActive || !bundle) return 0;
+    return bundle.originalPrice - bundle.bundlePrice;
+  }, [bundleActive, bundle]);
+
+  const whatsappMessage = encodeURIComponent(
+    `Hola 👋\n\n` +
+      `Quiero cotizar un proyecto con estas características:\n\n` +
+      `🧩 *Producto base:* ${base.name}\n` +
+      `💼 *Incluye la base profesional completa*\n\n` +
+      (bundleActive && bundle ? `🎁 *Pack aplicado:* ${bundle.title}\n` : "") +
+      (selectedExtras.length
+        ? `✨ *Extras incluidos:*\n${selectedExtras
+            .map((e) => `- ${e.title}`)
+            .join("\n")}\n\n`
+        : "\n") +
+      `💰 *Inversión estimada:* $${total.toLocaleString()} MXN\n\n` +
+      `¿Me confirmas disponibilidad y los siguientes pasos?`
+  );
 
   return (
-    <section className="section cotizador bg-gray-50 py-20">
-      <div id="cotizador" className="container">
-        <h1 className="text-center md:text-center mb-12 text-3xl font-bold" data-aos="zoom-in" data-aos-delay="100">
-          Cotiza tu proyecto
-        </h1>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Columna izquierda - Selección */}
-          <div className="cotizador-content">
-            <div className="cotizador-box bg-white p-6 m-0 rounded-lg shadow-sm mb-6">
-              <h3 className="text-xl font-bold mb-4">Elige tu paquete base:</h3>
-              <div className="space-y-3">
-                {packages.map((pkg, index) => (
-                  <label key={index} className="flex items-start space-x-3 cursor-pointer p-3 m-0 rounded-lg hover:bg-gray-50 transition-colors text-sm">
-                    <input
-                      type="radio"
-                      name="paquete"
-                      value={pkg.value}
-                      checked={selectedPackage === pkg.value}
-                      onChange={handlePackageChange}
-                      className="focus:ring-coffee mt-1"
-                    />
-                    <div>
-                      <span className="font-black">{pkg.display}</span>
-                      <p className="text-sm text-gray-600 mt-1">{pkg.features.slice(0, 2).join(' • ')}</p>
-                    </div>
-                  </label>
-                ))}
-              </div>
-            </div>
-            
-            <div className="cotizador-box bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="text-xl font-bold mb-4">Agrega funcionalidades extra:</h3>
-              <div className="space-y-3">
-                {extraOptions.map((extra, index) => (
-                  <label key={index} className="flex items-center space-x-3 cursor-pointer p-3 m-0 rounded-lg hover:bg-gray-50 transition-colors text-sm">
-                    <input
-                      type="checkbox"
-                      className="extra focus:ring-coffee"
-                      value={extra.value}
-                      name={extra.label}
-                      onChange={handleExtraChange}
-                      checked={extras.some(e => e.label === extra.label)}
-                    />
-                    <span>{extra.display}</span>
-                  </label>
-                ))}
-              </div>
-            </div>
-          </div>
-          
-          {/* Columna derecha - Resumen */}
-          <div className="resumen flex flex-col">
-            <div id="resumen" className="bg-white p-8 rounded-lg shadow-sm flex-1">
-              <h3 className="text-2xl font-bold mb-6 text-center border-b pb-4">
-                Resumen de tu selección
-              </h3>
-              
-              {/* Paquete seleccionado */}
-              <div className="mb-6">
-                <h4 className="font-semibold text-lg mb-2">📦 Paquete:</h4>
-                <div className="bg-coffee/10 p-4 rounded-lg">
-                  {
-                    selectedPackageLabel === undefined ? 
-                      <div></div>
-                      : (
-                        <div>
+    <section id="cotizador" className="bg-color-bg-light py-24">
+      <div className="max-w-xl mx-auto px-4 space-y-8">
+        <h1 className="title text-center">Cotiza tu sitio en minutos</h1>
+        <p className="text-center mb-6">
+          Precio claro, sin llamadas ni letras chiquitas
+        </p>
 
-                    <p className="font-medium">{selectedPackageLabel} (${parseInt(selectedPackage).toLocaleString()})</p>
-                    <ul className="text-sm text-gray-600 mt-2 space-y-1">
-                      {getSelectedPackage()?.features.map((feature, index) => (
-                        <li key={index} className="flex items-start">
-                          <span className="text-green-500 mr-2">✓</span>
-                          {feature}
+        {/* PRODUCTO BASE */}
+        <div className="bg-white rounded-2xl p-6 shadow-md mb-6">
+          {/* <h2 className="subtitle-cotizador ">1. </h2> */}
+          <ul className="space-y-2 mb-4">
+            <li className="flex items-center gap-2 subtitle-cotizador ">
+              <span className="">1.</span>
+              <h2 className="">
+                Elige tu producto
+              </h2>
+            </li>
+          </ul>
+
+          <div className="space-y-3">
+            {products.map((product) => (
+              <button
+                key={product.id}
+                onClick={() => {
+                  setBase(product);
+                  setSelectedExtras([]);
+                }}
+                className={`w-full text-left p-5 rounded-2xl border transition relative ${
+                  base.id === product.id
+                    ? "border-black bg-white ring-2 ring-black"
+                    : product.highlight
+                    ? "border-black bg-gray-50"
+                    : "border-gray-200 bg-white"
+                }`}
+              >
+                {product.highlight && (
+                  <span className="inline-block mb-2 text-[10px] font-semibold uppercase tracking-widest bg-black text-white px-2 py-1 rounded">
+                    Recomendado para empezar
+                  </span>
+                )}
+
+                <div className="flex flex-col sm:flex-row justify-between items-start items-center">
+                  <div>
+                    <ul className="space-y-2 mb-4">
+                      <li className="flex items-center gap-2">
+                        <span className="text-lg leading-none">
+                          {product.emoji}
+                        </span>
+                        <p className="font-semibold text-base leading-snug">
+                          {product.name}
+                        </p>
+                      </li>
+                    </ul>
+
+                    <p className="text-xs text-gray-500 mt-1">
+                      {product.tagline}
+                    </p>
+
+                    <ul className="flex flex-wrap gap-2 mt-2 mb-2 text-[11px] text-gray-500">
+                      {product.reassurance.map((r, i) => (
+                        <li
+                          key={i}
+                          className="bg-neutral-100 px-2 py-0.5 rounded"
+                        >
+                          ✔ {r}
                         </li>
                       ))}
                     </ul>
-                        </div>
-                      )
-                  }
-                </div>
-              </div>
-
-              {/* Extras seleccionados */}
-              {extras.length > 0 && (
-                <div className="mb-6">
-                  <h4 className="font-semibold text-lg mb-2">✨ Extras:</h4>
-                  <div className="space-y-2">
-                    {extras.map((extra, index) => (
-                      <div key={index} className="flex justify-between items-center bg-gray-50 p-3 rounded ">
-                        <span>{extra.label}</span>
-                        <span className="font-medium">${parseInt(extra.value).toLocaleString()}</span>
-                      </div>
-                    ))}
                   </div>
+                  <span className="font-bold">
+                    ${product.basePrice.toLocaleString()} MXN
+                  </span>
                 </div>
-              )}
+              </button>
+            ))}
+          </div>
+        </div>
 
-              {/* Total */}
-              <div className="border-t pt-4 mt-4">
-                <div className="flex justify-between items-center text-xl font-bold">
-                  <span>Total estimado:</span>
-                  <span className="text-coffee">${total.toLocaleString()} MXN</span>
+        {/* INCLUYE */}
+        <div className="bg-color-surface-muted border border-gray-200 rounded-2xl p-6 mb-6">
+          <h3 className="text-sm uppercase tracking-widest text-neutral-500 mb-2">
+            Base profesional incluida
+          </h3>
+
+          <p className="text-sm text-neutral-600 mb-5">
+            Esta es la estructura mínima para que tu proyecto funcione bien
+            desde el día uno.
+          </p>
+
+          <ul className="space-y-3 text-sm text-gray-700">
+            {base.features.map((f, i) => (
+              <li key={i} className="flex gap-3 items-start">
+                <span className="mt-0.5 text-green-600 font-bold">✓</span>
+                <span>{f}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="text-xs text-neutral-500 mt-5">
+            Todo esto está incluido sin costos ocultos ni mensualidades.
+          </p>
+        </div>
+
+        {/* BUNDLE */}
+        <div className="bg-white rounded-2xl p-5 shadow-sm mb-6">
+          <ul className="space-y-2 mb-4">
+            <li className="flex items-center gap-2 subtitle-cotizador ">
+              <span className="">2.</span>
+              <h2 className="">
+                Paga menos hoy y evita contratarlo después
+              </h2>
+            </li>
+          </ul>
+
+          {bundle && (
+            <div
+              className={`border rounded-2xl p-4 mb-6 ${
+                !bundleActive
+                  ? "border-gray-200 bg-white"
+                  : "bg-gray-50 border-black ring-2 ring-black"
+              } `}
+            >
+              <p className="text-xs uppercase tracking-widest text-neutral-500 mb-2">
+                La mayoría de negocios lo elige
+              </p>
+
+              <h3 className="font-semibold mb-2">{bundle.title}</h3>
+
+              <ul className="text-sm text-gray-700 space-y-3 mb-4">
+                {bundle.extras.map((id) => {
+                  const extra = extras.find((e) => e.id === id);
+                  return <li key={id} className="flex gap-1 items-start"><span>✓</span> <span>{extra?.title}</span></li>;
+                })}
+              </ul>
+
+              <div className="flex justify-between items-center gap-2">
+                <div>
+                  <p className="font-bold">
+                    ${bundle.bundlePrice.toLocaleString()} <span className="text-sm">MXN</span>
+                  </p>
+                  <p className="text-xs text-gray-500 line-through">
+                    ${bundle.originalPrice.toLocaleString()}
+                  </p>
                 </div>
-                <p className="text-sm text-gray-600 mt-2 text-center">
-                  Todos los precios incluyen I.V.A.
-                </p>
+
+                <button
+                  onClick={() => setBundleActive(!bundleActive)}
+                  className="btn btn-primary"
+                >
+                  {bundleActive ? "Quitar pack" : "Agregar pack"}
+                </button>
               </div>
-            </div>
-            
-            {/* Botón WhatsApp */}
-            <div className="text-center mt-6">
-              <a
-                id="btn-whatsapp"
-                className="btn-whatsapp"
-                href={`https://wa.me/529223400366?text=${generateWhatsAppMessage()}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                💬 Enviar cotización por WhatsApp
-              </a>
-              <p className="text-sm text-gray-600 mt-2">
-                Te contactaremos para afinar detalles y confirmar precios
+
+              <p className="text-xs text-green-600 mt-2">
+                Ahorras $
+                {(bundle.originalPrice - bundle.bundlePrice).toLocaleString()}{" "}
+                MXN
               </p>
             </div>
+          )}
+        </div>
+
+        {/* EXTRAS */}
+        {availableExtras.length > 0 && (
+          <div className="bg-white rounded-2xl p-5 shadow-sm mb-28">
+            <ul className="space-y-2 mb-4">
+            <li className="flex items-center gap-2 subtitle-cotizador ">
+              <span className="">3.</span>
+              <h2 className="">
+                Personaliza según tus necesidades
+              </h2>
+            </li>
+          </ul>
+
+            <div className="space-y-3">
+              {availableExtras.map((extra) => (
+                <label
+                  key={extra.id}
+                  className={`flex justify-between items-center p-4 rounded-xl border cursor-pointer ${
+                    selectedExtras.some((e) => e.id === extra.id)
+                      ? "border-black bg-gray-50"
+                      : "border-gray-200"
+                  }`}
+                >
+                  <div>
+                    <p className="">{extra.title}</p>
+                    <p className="text-sm text-gray-600 me-1">{extra.description}</p>
+                  </div>
+                  <div className="flex flex-col md:flex-row items-center gap-3">
+                    <span className="font-semibold">
+                      ${extra.price.toLocaleString()}
+                    </span>
+                    <input
+                      type="checkbox"
+                      className="hidden"
+                      checked={selectedExtras.some((e) => e.id === extra.id)}
+                      onChange={() => toggleExtra(extra)}
+                    />
+                    {selectedExtras.some((e) => e.id === extra.id) && (
+                      <span className="text-xs text-neutral-500">Agregado</span>
+                    )}
+                  </div>
+                </label>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* CTA STICKY */}
+        <div className="sticky bottom-0 bg-white border-t z-40">
+          <div className="max-w-xl mx-auto px-4 py-4 space-y-2">
+            {/* INFO PRECIO */}
+            <div className="flex justify-between items-start gap-2">
+              <div className="basis-3/4">
+                <p className="text-xs text-neutral-500">Inversión estimada</p>
+
+                {bundleActive && bundle && (
+                  <p className="text-xs text-gray-400 line-through leading-tight">
+                    ${(base.basePrice + bundle.originalPrice).toLocaleString()}{" "}
+                    MXN
+                  </p>
+                )}
+
+                <p className="text-2xl font-bold leading-tight">
+                  ${total.toLocaleString()} <span className="text-xs">MXN</span>
+                </p>
+
+                {bundleActive && discountAmount > 0 && (
+                  <p className="text-xs text-green-700 mt-0.5">
+                    Descuento aplicado −${discountAmount.toLocaleString()} MXN
+                  </p>
+                )}
+              </div>
+
+              {/* CTA */}
+              <a
+                href={`https://wa.me/529223400366?text=${whatsappMessage}`}
+                target="_blank"
+                className="btn btn-accent px-6 py-3 text-center h-fit"
+                data-variant={variant}
+              >
+                {variant === "A"
+                  ? "Continuar por WhatsApp →"
+                  : "Recibir cotización →"}
+              </a>
+            </div>
+
+            {/* MICRO REASEGURO */}
+            <p className="text-[11px] text-neutral-500 text-center">
+              Te confirmo todo antes de iniciar · Sin pagos automáticos
+            </p>
           </div>
         </div>
       </div>

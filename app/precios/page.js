@@ -1,6 +1,7 @@
 import Head from 'next/head';
-import PricingSection from '../components/sections/PricingSection';
 import Cotizador from '../components/sections/Cotizador';
+import { mantenimientoPlans } from '@/assets/products';
+import MantenimientoSection from '../components/sections/MantenimientoSection';
 import CTASection from '../components/sections/CTASection';
 
 export default function Precios() {
@@ -8,8 +9,8 @@ export default function Precios() {
       
   <div className="section">
     <div className='container'>
-      <PricingSection />
       <Cotizador />
+      <MantenimientoSection plans={mantenimientoPlans} />
       <CTASection />
     </div>
   </div>

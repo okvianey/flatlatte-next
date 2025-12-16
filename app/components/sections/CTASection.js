@@ -7,7 +7,7 @@ export default function CTASection() {
         <div className="flex flex-col items-center justify-center text-center">
           <div className="section-title">
             <div className="">
-              <h1 className="text-3xl md:text-4xl font-bold mb-6" data-aos="fade-up">
+              <h1 className="title" data-aos="fade-up">
                 ¿Quieres aumentar tus ingresos como freelancer?
               </h1>
               <p className="text-xl" data-aos="fade-up">
