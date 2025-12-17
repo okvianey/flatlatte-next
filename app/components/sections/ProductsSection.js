@@ -4,7 +4,7 @@ import { products } from "@/assets/products";
 
 export default function ProductsSection() {
   return (
-    <section className="py-20">
+    <section id="product" className="py-20">
       <div className="max-w-6xl mx-auto px-4">
         <header className="mb-12 text-center">
           <h2 className="subtitle">

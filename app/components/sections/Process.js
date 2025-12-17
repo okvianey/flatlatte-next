@@ -5,7 +5,7 @@ export default function Process(){
     <section id="process" className="section bg-[var(--bg)]">
       <div className="container text-center">
         <h2 className="subtitle">
-          Tu negocio en versión digital.
+          Tu negocio en versión digital
         </h2>
         <p className="mt-6 mb-6">
           Tan fácil como charlar, diseñar y servirlo online.

@@ -5,7 +5,7 @@ export default function About() {
   return (
     <section id="about" className="section">
       <div className="container text-center">
-        <h2 className="subtitle">Herramientas digitales tostadas a fuego lento.</h2>
+        <h2 className="subtitle">Herramientas digitales tostadas a fuego lento</h2>
         <p className="mx-auto max-w-3xl mb-6">
          Creamos soluciones digitales que te ayudan a vender más y administrar mejor tu negocio. Ya sea que necesites mostrar tu menú o recibir pedidos, lo hacemos simple, bonito y funcional.
         </p>
