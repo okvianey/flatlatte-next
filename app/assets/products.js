@@ -103,9 +103,9 @@ export const extras = [
   {
     id: "domain",
     icon: "bi-pencil-square",
-    title: "Dominio personalizado (.com)",
+    title: "Dominio (tunegocio.com) + Hospedaje",
     description: "Tu marca con nombre profesional.",
-    price: 1200,
+    price: 1550,
     availableFor: ["whatsapp", "web"],
   },
   {
@@ -130,10 +130,10 @@ export const extras = [
       ]
     },
     {
-      title: "Dominio personoalizado + Hospedaje",
-      price: 1200,
+      title: "Enlace personalizado",
+      price: 1600,
       features: [
-        "Dominio y hospedaje (tumarca.com)",
+        "Dominio (tunegocio.com) y hospedaje",
         "Mantenimiento técnico",
         "Respaldo de seguridad"
       ]
