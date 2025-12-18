@@ -106,7 +106,7 @@ export const extras = [
     title: "Dominio (tunegocio.com) + Hospedaje",
     description: "Tu marca con nombre profesional.",
     price: 1550,
-    availableFor: ["web"],
+    availableFor: ["whatsapp"],
   },
   {
     id: "agenda",
