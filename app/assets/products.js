@@ -157,20 +157,10 @@ export const bundles = [
     subtitle: 'Optimizado para que más personas te encuentren en Google',
     appliesTo: 'whatsapp',
     extras: ['copy', 'optimizacion-seo', 'domain'],
-    originalPrice: 3600,
+    originalPrice: 3950,
     bundlePrice: 2400,
     highlight: true
   },
-  {
-    id: 'vende-solo',
-    title: 'Pack Negocio que Vende Solo',
-    subtitle: 'Automatiza, agenda y vende sin estar pendiente',
-    appliesTo: 'whatsapp',
-    extras: ['panel', 'copy', 'optimizacion-seo', 'domain'],
-    originalPrice: 6000,
-    bundlePrice: 4900,
-    highlight: false
-}
 
 ];
 

@@ -114,22 +114,18 @@ export default function Okvianey() {
             </h3>
             <div className="text-gray-700 text-sm space-y-3">
               <p>
-                Desde 2013, mezclo mi pasión por el café, la música y la tecnología 
-                para dar vida a proyectos.
+                Desde 2013 mezclo mi pasión por el café, la música y la tecnología para dar vida a proyectos con propósito.
               </p>
               <p>
                 Con <strong>Flat Latte</strong>, convierto la cafeina en sitios web 
                 limpios y funcionales. En <strong>nohome studio</strong>, hacemos 
-                música sincera, sin preocuparnos de los límites técnicos mientras 
-                haya una historia que contar.
+                música sincera, sin preocuparnos de los límites técnicos.
               </p>
               <p>
-                Mi trabajo se trata de tomar lo que hay y sacarle lo máximo posible. 
-                De simplificar lo complejo sin vaciarlo de sentido.
+                Mi trabajo consiste en tomar lo que hay, entenderlo a fondo y llevarlo al máximo: simplificar lo complejo sin vaciarlo de sentido.
               </p>
-              <p className="text-gray-600 italic">
-                Lo que vale la pena crear es lo que no necesita adornos... 
-                solo necesita existir.
+              <p className="text-gray-600 ">
+                Porque lo que vale la pena no requiere adornos, solo necesita existir.
               </p>
             </div>
           </div>
