@@ -24,7 +24,7 @@ export default function Okvianey() {
       image: "/assets/img/web-portfolio.webp",
       alt: "Portfolio",
       text: "Portfolio",
-      description: "English version",
+      description: "English version of my portfolio",
       emoji: "🌐"
     },
     {
@@ -32,7 +32,7 @@ export default function Okvianey() {
       image: "/assets/img/dia.jpg",
       alt: "Mi día a día",
       text: "Mi día a día",
-      description: "Creando algo",
+      description: "Creando algo nuevo",
       emoji: "📱"
     }
   ];
@@ -45,19 +45,32 @@ export default function Okvianey() {
           <div className="text-center mb-8">
             <div className="mb-4">
               <Image
-                src="/assets/img/vianey-perfil.jpg"
+                src="/assets/img/unnamed.jpg"
                 alt="Vianey"
                 width={150}
                 height={150}
                 // quality={100}
                 className="rounded-full object-cover mx-auto border-4 border-white shadow-lg"
               />
-            </div>
-            <h1 className="text-2xl font-bold text-gray-800 mb-2">Vianey</h1>
-            <p className="text-gray-600 text-sm">
-              Un cafecito mientras sobrepensamos todo y creamos algo.
-            </p>
+            </div>    
           </div>
+
+   {/* About Section */}
+              <div className="bg-white rounded-xl shadow-sm p-6 mb-8">
+                <h1 className="text-2xl font-bold text-gray-800 mb-2">Hola, soy Vianey.</h1>
+                {/* <h3 className="text-md font-bold text-gray-800 mb-4 flex items-center">
+                  Sobre mí
+                </h3> */}
+                <div className="text-gray-700 text-sm space-y-3">
+                  <p>
+                    Desde 2013 convierto la cafeína en proyectos con sentido. Con <strong>Flat Latte</strong>, hago sitios web que hacen lo que tienen que hacer, sin complicación. En <strong>nohome studio</strong>, hacemos música sin pedirle permiso a los límites técnicos.
+                  </p>
+                  <p>
+                    Mi proceso es simple: entender a fondo, simplificar sin vaciar, ejecutar sin adornos. Si algo puede decirse en 10 palabras, uso 5.
+                  </p>
+                </div>
+              </div>
+
 
           {/* Links Grid */}
           <div className="space-y-3 mb-8">
@@ -107,28 +120,8 @@ export default function Okvianey() {
             ))}
           </div>
 
-          {/* About Section */}
-          <div className="bg-white rounded-xl shadow-sm p-6">
-            <h3 className="text-md font-bold text-gray-800 mb-4 flex items-center">
-              Sobre mí
-            </h3>
-            <div className="text-gray-700 text-sm space-y-3">
-              <p>
-                Desde 2013 mezclo mi pasión por el café, la música y la tecnología para dar vida a proyectos con propósito.
-              </p>
-              <p>
-                Con <strong>Flat Latte</strong>, convierto la cafeina en sitios web 
-                limpios y funcionales. En <strong>nohome studio</strong>, hacemos 
-                música sincera, sin preocuparnos de los límites técnicos.
-              </p>
-              <p>
-                Mi trabajo consiste en tomar lo que hay, entenderlo a fondo y llevarlo al máximo: simplificar lo complejo sin vaciarlo de sentido.
-              </p>
-              <p className="text-gray-600 ">
-                Porque lo que vale la pena no requiere adornos, solo necesita existir.
-              </p>
-            </div>
-          </div>
+        
+
 
         </div>
       </div>
