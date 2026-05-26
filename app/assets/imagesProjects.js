@@ -7,6 +7,8 @@ import algodonImg from '@/public/assets/img/portfolio/algodon.jpg';
 import losdanersImg from '@/public/assets/img/portfolio/los-daners-1.jpg';
 import localesPalmitasImg from '@/public/assets/img/portfolio/localespalmitas.jpg';
 import bocanadaImg from '@/public/assets/img/portfolio/bocanada-2.jpg';
+import casasImg1 from '@/public/assets/img/portfolio/casas-1.jpg';
+import casasImg2 from '@/public/assets/img/portfolio/casas-2.jpg';
 
 
 export const portfolioImages = {
@@ -18,5 +20,7 @@ export const portfolioImages = {
   'algodon.jpg': algodonImg,
   'los-daners-1.jpg': losdanersImg,
   'localespalmitas.jpg': localesPalmitasImg,
-  'bocanada-2.jpg': bocanadaImg
+  'bocanada-2.jpg': bocanadaImg,
+  'casas-1.jpg': casasImg1,
+  'casas-2.jpg': casasImg2,
 };

@@ -9,28 +9,9 @@ export const portfolioItems = [
     img: portfolioImages['himnapp-3.jpg'],
     href: '/proyectos/himnapp/',
     url: 'https://himnapp.flatlatte.com/',
-    showHome: '1'
-  },
-  {
-    title: 'Spanish with monse',
-    type: 'Website',
-    description: '',
-    tags: [ 'html/css', 'javascript', 'nextjs' ],
-    img: portfolioImages['swmonse-2.jpg'],
-    href: '/proyectos/spanish-with-monse/',
-    url: 'https://www.spanishwithmonse.com/',
-    showHome: '0'
-  },
-  {
-    title: 'Temperamentos',
-    type: 'app web',
-    description: '',
-    tags: [ 'html/css', 'javascript', 'nextjs', 'tailwind' ],
-    img: portfolioImages['temperamentos-2.jpg'],
-    href: '/proyectos/temperamentos/',
-    url: 'https://okvianey.github.io/temperamentos/',
     showHome: ''
   },
+  
   {
     title: 'PIEB',
     type: 'web',
@@ -42,6 +23,46 @@ export const portfolioItems = [
     showHome: ''
   },
   {
+    title: 'Locales Palmitas',
+    type: 'web',
+    description: '',
+    tags: [ 'html/css', 'javascript', 'bootstrap' ],
+    img: portfolioImages['localespalmitas.jpg'],
+    href: '/proyectos/locales-palmitas/',
+    url: 'https://localespalmitas.flatlatte.com/',
+    showHome: ''
+  },
+  {
+    title: 'Spanish with monse',
+    type: 'Website',
+    description: '',
+    tags: [ 'html/css', 'javascript', 'nextjs' ],
+    img: portfolioImages['swmonse-2.jpg'],
+    href: '/proyectos/spanish-with-monse/',
+    url: 'https://www.spanishwithmonse.com/',
+    showHome: '0'
+  },
+   {
+    title: 'Bocanada',
+    type: 'app web',
+    description: '',
+    tags: [ 'Next.js', 'Tailwind' ],
+    img: portfolioImages['bocanada-2.jpg'],
+    href: '/proyectos/bocanada/',
+    url: 'https://bocanada.flatlatte.com',
+    showHome: '1'
+  },
+   {
+    title: 'CASAS',
+    type: 'app web',
+    description: '',
+    tags: [ 'Next.js', 'Tailwind' ],
+    img: portfolioImages['casas-2.jpg'],
+    href: '/proyectos/casas/',
+    url: 'https://casas.flatlatte.com',
+    showHome: '2'
+  },
+   {
     title: 'SUCVAL',
     type: 'web',
     description: '',
@@ -72,25 +93,15 @@ export const portfolioItems = [
     url: 'https://losdaners.flatlatte.com/',
     showHome: ''
   },
-  {
-    title: 'Locales Palmitas',
-    type: 'web',
-    description: '',
-    tags: [ 'html/css', 'javascript', 'bootstrap' ],
-    img: portfolioImages['localespalmitas.jpg'],
-    href: '/proyectos/locales-palmitas/',
-    url: 'https://localespalmitas.flatlatte.com/',
-    showHome: ''
-  },
    {
-    title: 'Bocanada',
+    title: 'Temperamentos',
     type: 'app web',
     description: '',
-    tags: [ 'Next.js', 'Tailwind' ],
-    img: portfolioImages['bocanada-2.jpg'],
-    href: '/proyectos/bocanada/',
-    url: 'https://bocanada.flatlatte.com',
-    showHome: '2'
+    tags: [ 'html/css', 'javascript', 'nextjs', 'tailwind' ],
+    img: portfolioImages['temperamentos-2.jpg'],
+    href: '/proyectos/temperamentos/',
+    url: 'https://okvianey.github.io/temperamentos/',
+    showHome: ''
   },
 ]
 
