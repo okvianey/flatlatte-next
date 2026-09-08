@@ -3,11 +3,19 @@ import Link from "next/link";
 
 export default function Okvianey() {
   const links = [
+     {
+      href: "https://www.linkedin.com/in/okvianey/",
+      image: "/assets/img/dia.jpg",
+      alt: "LinkedIn",
+      text: "LinkedIn",
+      description: "Hablemos de proyectos",
+      emoji: "🤝"
+    },
     {
       href: "https://youtube.com/@nohomestudio",
       image: "/assets/img/nohomestudio.jpg",
       alt: "nohome studio",
-      text: "nohome studio",
+      text: "no home studio",
       description: "Producimos música donde sea",
       emoji: "🎵"
     },
@@ -16,7 +24,7 @@ export default function Okvianey() {
       image: "/assets/img/flatlatte.webp",
       alt: "Flat Latte",
       text: "Flat Latte",
-      description: "Sitios Web para emprendedores",
+      description: "Sitios Web para cafeterías",
       emoji: "💻"
     },
     {
@@ -24,7 +32,7 @@ export default function Okvianey() {
       image: "/assets/img/web-portfolio.webp",
       alt: "Portfolio",
       text: "Portfolio",
-      description: "English version of my portfolio",
+      description: "English version",
       emoji: "🌐"
     },
     {
@@ -52,24 +60,28 @@ export default function Okvianey() {
                 // quality={100}
                 className="rounded-full object-cover mx-auto border-4 border-white shadow-lg"
               />
-            </div>    
+            </div>
           </div>
 
-   {/* About Section */}
-              <div className="bg-white rounded-xl shadow-sm p-6 mb-8">
-                <h1 className="text-2xl font-bold text-gray-800 mb-2">Hola, soy Vianey.</h1>
-                {/* <h3 className="text-md font-bold text-gray-800 mb-4 flex items-center">
+          {/* About Section */}
+          <div className="bg-white rounded-xl shadow-sm p-6 mb-8">
+            <h1 className="text-2xl font-bold text-gray-800 mb-2">Hola, soy Vianey.</h1>
+            {/* <h3 className="text-md font-bold text-gray-800 mb-4 flex items-center">
                   Sobre mí
                 </h3> */}
-                <div className="text-gray-700 text-sm space-y-3">
-                  <p>
-                    Desde 2013 convierto la cafeína en proyectos con sentido. Con <strong>Flat Latte</strong>, hago sitios web que hacen lo que tienen que hacer, sin complicación. En <strong>nohome studio</strong>, hacemos música sin pedirle permiso a los límites técnicos.
-                  </p>
-                  <p>
-                    Mi proceso es simple: entender a fondo, simplificar sin vaciar, ejecutar sin adornos. Si algo puede decirse en 10 palabras, uso 5.
-                  </p>
-                </div>
-              </div>
+            <div className="text-gray-700 text-sm space-y-3">
+              <p>
+                Desde 2013 combino cafeína, comunicación y tecnología para crear proyectos. Actualmente, Diseño e imparto talleres sobre tecnología, comunicación y pensamiento crítico para niños, jóvenes y adultos.
+              </p>
+              <p>
+                Me interesa tomar algo complejo y convertirlo en algo que otras personas puedan comprender y usar. Estoy convencida de que la tecnología y el conocimiento deben potenciar el pensamiento humano, no sustituirlo.
+              </p>
+              <p>
+                Cuando no estoy enseñando, me encuentras en mi laptop construyendo webs para <strong>Flat Latte</strong> o produciendo música en <strong>no home studio</strong>.
+              </p>
+
+            </div>
+          </div>
 
 
           {/* Links Grid */}
@@ -84,17 +96,18 @@ export default function Okvianey() {
               >
                 <div className="flex items-center space-x-3 flex-1 min-w-0">
                   <div className="relative">
-                    <Image
+                    {/* <Image
                       src={link.image}
                       alt={link.alt}
                       width={50}
                       height={50}
                       className="w-10 h-10 md:w-20 md:h-20 rounded-lg object-cover"
-                    />
+                    /> */}
                     {/* Para ver emojis */}
+                    <span className="text-5xl">{link.emoji}</span>
                     {/* <span className="absolute -top-1 -right-1 text-xs">{link.emoji}</span> */}
                   </div>
-                  
+
                   <div className="flex-1 min-w-0">
                     <div className="flex flex-col sm:flex-row sm:flex-1 items-baseline space-x-2">
                       <div className="link-text font-semibold text-gray-800 text-sm truncate">
@@ -107,11 +120,11 @@ export default function Okvianey() {
                     </div>
                   </div>
                 </div>
-                
-                <svg 
-                  className="w-4 h-4 text-gray-400 group-hover:text-gray-600 transition-colors" 
-                  fill="none" 
-                  stroke="currentColor" 
+
+                <svg
+                  className="w-4 h-4 text-gray-400 group-hover:text-gray-600 transition-colors"
+                  fill="none"
+                  stroke="currentColor"
                   viewBox="0 0 24 24"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -120,7 +133,7 @@ export default function Okvianey() {
             ))}
           </div>
 
-        
+
 
 
         </div>

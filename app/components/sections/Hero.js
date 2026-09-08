@@ -8,15 +8,15 @@ export default function Hero(){
       <div className="container flex flex-col md:flex-row justify-center lg:justify-center gap-4">
         <div className="flex-2 md:flex-1">
           <h1 className="text-6xl sm:text-8xl tracking-tight">
-            Tu negocio tiene algo que merece ser visto.
+            Tu cafetería tiene algo que debe ser visto.
           </h1>
           <p className="mt-4 max-w-xl text-md md:text-lg leading-6">
-            Soluciones simples para cafés y emprendedores.
+            Soluciones simples para emprendedores.
           </p>
 
           <div className="mt-6 flex-col sm:flex sm:flex-row sm:gap-3">
             <Link href="/#product" className="btn btn-primary mb-2 sm:mb-0 w-9/12 sm:w-auto">Ver lo que hacemos</Link>
-            <Link href="/#contact" className="btn btn-accent w-9/12 sm:w-auto">Agendar una charla</Link>
+            {/* <Link href="/#contact" className="btn btn-accent w-9/12 sm:w-auto">Agendar una charla</Link> */}
           </div>
         </div>
 

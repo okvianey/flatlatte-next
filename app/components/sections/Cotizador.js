@@ -8,6 +8,7 @@ export default function Cotizador() {
   const [selectedExtras, setSelectedExtras] = useState([]);
   const [bundleActive, setBundleActive] = useState(false);
   const bundle = bundles.find((b) => b.appliesTo === base.type);
+  const formatPrice = (value) => value.toLocaleString('en-US');
 
   const availableExtras = useMemo(() => {
     if (!base) return [];
@@ -92,7 +93,7 @@ export default function Cotizador() {
       <div className="max-w-xl mx-auto px-4 space-y-8">
         <h1 className="title text-center">Cotiza tu sitio en minutos</h1>
         <p className="text-center mb-6">
-          Precio claro, sin llamadas ni letras chiquitas
+          Precio claro, sin letras chiquitas
         </p>
 
         {/* PRODUCTO BASE */}
@@ -117,15 +118,15 @@ export default function Cotizador() {
                 }}
                 className={`w-full text-left p-5 rounded-2xl border transition relative ${
                   base.id === product.id
-                    ? "border-black bg-white ring-2 ring-black"
+                    ? "border-black bg-gray-50 ring-2 ring-black"
                     : product.highlight
-                    ? "border-black bg-gray-50"
+                    ? "border-gray-200 bg-white"
                     : "border-gray-200 bg-white"
                 }`}
               >
                 {product.highlight && (
-                  <span className="inline-block mb-2 text-[10px] font-semibold uppercase tracking-widest bg-black text-white px-2 py-1 rounded">
-                    Recomendado para empezar
+                  <span className="inline-block mb-4 text-[10px] uppercase tracking-widest bg-black text-white px-2 py-2 rounded">
+                    Ideal para empezar
                   </span>
                 )}
 
@@ -158,7 +159,8 @@ export default function Cotizador() {
                     </ul>
                   </div>
                   <span className="font-bold">
-                    ${product.basePrice.toLocaleString()} MXN
+                    ${formatPrice(product.basePrice)} MXN
+                    {/* ${product.basePrice.toLocaleString()} MXN */}
                   </span>
                 </div>
               </button>
@@ -167,14 +169,13 @@ export default function Cotizador() {
         </div>
 
         {/* INCLUYE */}
-        <div className="bg-color-surface-muted border border-gray-200 rounded-2xl p-6 mb-6">
-          <h3 className="text-sm uppercase tracking-widest text-neutral-500 mb-2">
-            Base profesional incluida
-          </h3>
+        <div className="bg-white border border-gray-200 shadow-md rounded-2xl p-6 mb-6">
+          {/* <h3 className="text-sm uppercase tracking-widest text-neutral-500 mb-2">
+            Incluye
+          </h3> */}
 
           <p className="text-sm text-neutral-600 mb-5">
-            Esta es la estructura mínima para que tu proyecto funcione bien
-            desde el día uno.
+            Incluye todo lo necesario para que tu proyecto funcione desde el día uno:
           </p>
 
           <ul className="space-y-3 text-sm text-gray-700">
@@ -185,9 +186,7 @@ export default function Cotizador() {
               </li>
             ))}
           </ul>
-          <p className="text-xs text-neutral-500 mt-5">
-            Todo esto está incluido sin costos ocultos ni mensualidades.
-          </p>
+         
         </div>
 
         {/* BUNDLE */}
@@ -225,10 +224,10 @@ export default function Cotizador() {
               <div className="flex justify-between items-center gap-2">
                 <div>
                   <p className="font-bold">
-                    ${bundle.bundlePrice.toLocaleString()} <span className="text-sm">MXN</span>
+                    ${formatPrice(bundle.bundlePrice)}<span className="text-sm">MXN</span>
                   </p>
                   <p className="text-xs text-gray-500 line-through">
-                    ${bundle.originalPrice.toLocaleString()}
+                    ${formatPrice(bundle.originalPrice)} MXN
                   </p>
                 </div>
 
@@ -242,7 +241,7 @@ export default function Cotizador() {
 
               <p className="text-xs text-green-600 mt-2">
                 Ahorras $
-                {(bundle.originalPrice - bundle.bundlePrice).toLocaleString()}{" "}
+                {formatPrice(bundle.originalPrice - bundle.bundlePrice)}{" "}
                 MXN
               </p>
             </div>
@@ -277,7 +276,7 @@ export default function Cotizador() {
                   </div>
                   <div className="flex flex-col md:flex-row items-center gap-3">
                     <span className="font-semibold">
-                      ${extra.price.toLocaleString()}
+                      ${formatPrice(extra.price)}<span className="text-xs">MXN</span>
                     </span>
                     <input
                       type="checkbox"
@@ -305,18 +304,19 @@ export default function Cotizador() {
 
                 {bundleActive && bundle && (
                   <p className="text-xs text-gray-400 line-through leading-tight">
-                    ${(base.basePrice + bundle.originalPrice).toLocaleString()}{" "}
+                    ${(formatPrice(base.basePrice + bundle.originalPrice))}{" "}
                     MXN
+                    
                   </p>
                 )}
 
                 <p className="text-2xl font-bold leading-tight">
-                  ${total.toLocaleString()} <span className="text-xs">MXN</span>
+                  ${formatPrice(total)} <span className="text-xs">MXN</span>
                 </p>
 
                 {bundleActive && discountAmount > 0 && (
                   <p className="text-xs text-green-700 mt-0.5">
-                    Descuento aplicado −${discountAmount.toLocaleString()} MXN
+                    Descuento aplicado −${formatPrice(discountAmount)} MXN
                   </p>
                 )}
               </div>

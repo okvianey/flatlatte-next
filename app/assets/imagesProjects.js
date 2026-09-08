@@ -1,5 +1,6 @@
 import himnappImg from '@/public/assets/img/portfolio/himnapp-3.jpg';
 import swmonseImg from '@/public/assets/img/portfolio/swmonse-2.jpg';
+import swmonseImg3 from '@/public/assets/img/portfolio/swmonse-3.jpg';
 import temperamentosImg from '@/public/assets/img/portfolio/temperamentos-2.jpg';
 import piebImg from '@/public/assets/img/portfolio/pieb-3.jpg';
 import sucvalImg from '@/public/assets/img/portfolio/sucval.jpg';
@@ -14,6 +15,7 @@ import casasImg2 from '@/public/assets/img/portfolio/casas-2.jpg';
 export const portfolioImages = {
   'himnapp-3.jpg': himnappImg,
   'swmonse-2.jpg': swmonseImg,
+  'swmonse-3.jpg': swmonseImg3,
   'temperamentos-2.jpg': temperamentosImg,
   'pieb-3.jpg': piebImg,
   'sucval.jpg': sucvalImg,

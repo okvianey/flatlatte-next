@@ -18,16 +18,16 @@ export default function ProductCard({
     <div className={'rounded-2xl border p-6 flex flex-col justify-between bg-white'}>
       <div>
         {highlight && (
-          <span className="inline-block mb-3 text-xs font-semibold px-3 py-1 rounded-[2px] bg-[var(--accent)] text-white">
-            Más vendido
+          <span className="inline-block mb-3 text-xs px-3 py-1 rounded-[2px] bg-[var(--accent)] text-white">
+            Ideal para empezar
           </span>
         )}
 
-        <h3 className="text-xl font-semibold mb-2">{name}</h3>
+        <h3 className="text-2xl font-semibold mb-2">{name}</h3>
 
         <p className="mb-4">{description}</p>
 
-        <p className="text-2xl font-semibold mb-4">{price}</p>
+        <p className="text-xl font-semibold mb-4">{price}</p>
 
         <ul className="space-y-2 text-sm mb-6">
           {features.map((feature, index) => (
@@ -45,7 +45,7 @@ export default function ProductCard({
           rel="noopener noreferrer"
           className="btn btn-primary text-center me-4"
         >
-          ver ejemplo
+          Ver ejemplo
         </Link>
         <a
           href={`https://wa.me/529223400366?text=${message}`}

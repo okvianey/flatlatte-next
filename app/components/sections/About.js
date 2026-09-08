@@ -13,7 +13,7 @@ export default function About() {
         <div className="mt-10 grid-cols-1 md:grid-cols-3 gap-6 max-w-2xl mx-auto hidden md:grid">
           <div className="p-6 text-center">
             <i className="bi bi-heart text-5xl mb-2"></i>
-            <h4 className="font-semibold mb-2">Diseño que se siente</h4>
+            <h4 className="font-semibold mb-2">Adaptado a lo que necesitas</h4>
 
           </div>
           <div className="p-6 rounded text-center">

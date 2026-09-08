@@ -12,7 +12,7 @@ export default function ProductsSection() {
           </h2>
           <p className="text-neutral-600 max-w-2xl mx-auto">
             Elige la opción que mejor se adapte a tu negocio. Sin planes confusos,
-            sin letras chiquitas.
+            ni letras chiquitas.
           </p>
         </header>
 
@@ -23,7 +23,7 @@ export default function ProductsSection() {
         </div>
         <div className="text-center mt-12">
           <Link href="/precios" className="btn btn-accent">
-            Armar mi proyecto ahora
+            Cotizar mi proyecto ahora
           </Link>
         </div>
 

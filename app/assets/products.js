@@ -42,7 +42,7 @@ export const products = [
     features: [
       "Hasta 5 secciones",
       "Perfil de Google optimizado",
-      "Conexión con WhatsApp o reservas",
+      "Conexión con WhatsApp",
       "Hosting + dominio por 1 año**",
       "3 revisiones incluidas"
     ],
@@ -54,7 +54,7 @@ export const products = [
 ];
 
 export const extras = [
-  // 🧩 Extras rápidos (impulsivos)
+  // 🧩 Extras rápidos 
   {
     id: "copy",
     title: "Escribimos los textos por ti",
@@ -82,24 +82,24 @@ export const extras = [
     level: "quick",
     availableFor: ["web"],
   },
-  {
-    id: "blog",
-    title: "Blog inicial",
-    description: "Tu sitio listo para crecer con contenido.",
-    price: 1200,
-    level: "quick",
-    availableFor: ["web"],
-  },
+  // {
+  //   id: "blog",
+  //   title: "Blog inicial",
+  //   description: "Tu sitio listo para crecer con contenido.",
+  //   price: 1200,
+  //   level: "quick",
+  //   availableFor: ["web"],
+  // },
 
   // ⚙️ Extra estructural
-  {
-    id: "panel",
-    title: "Panel de control fácil",
-    description: "Haz cambios tú mismo sin pagar cada ajuste.",
-    price: 2400,
-    level: "structural",
-    availableFor: ["web", "whatsapp"],
-  },
+  // {
+  //   id: "panel",
+  //   title: "Panel de control fácil",
+  //   description: "Haz cambios tú mismo sin pagar cada ajuste.",
+  //   price: 2400,
+  //   level: "structural",
+  //   availableFor: ["web", "whatsapp"],
+  // },
   {
     id: "domain",
     icon: "bi-pencil-square",
@@ -146,9 +146,9 @@ export const bundles = [
     title: 'Pack Negocio Profesional',
     subtitle: 'Todo lo que la mayoría de negocios agrega después',
     appliesTo: 'web',
-    extras: ['panel', 'copy', 'orders'],
-    originalPrice: 4800,
-    bundlePrice: 3200,
+    extras: ['copy', 'orders'],
+    originalPrice: 2400,
+    bundlePrice: 1990,
     highlight: true
   },
   {

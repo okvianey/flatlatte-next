@@ -37,7 +37,7 @@ export const portfolioItems = [
     type: 'Website',
     description: '',
     tags: [ 'html/css', 'javascript', 'nextjs' ],
-    img: portfolioImages['swmonse-2.jpg'],
+    img: portfolioImages['swmonse-3.jpg'],
     href: '/proyectos/spanish-with-monse/',
     url: 'https://www.spanishwithmonse.com/',
     showHome: '0'
@@ -93,15 +93,15 @@ export const portfolioItems = [
     url: 'https://losdaners.flatlatte.com/',
     showHome: ''
   },
-   {
-    title: 'Temperamentos',
-    type: 'app web',
-    description: '',
-    tags: [ 'html/css', 'javascript', 'nextjs', 'tailwind' ],
-    img: portfolioImages['temperamentos-2.jpg'],
-    href: '/proyectos/temperamentos/',
-    url: 'https://okvianey.github.io/temperamentos/',
-    showHome: ''
-  },
+  //  {
+  //   title: 'Temperamentos',
+  //   type: 'app web',
+  //   description: '',
+  //   tags: [ 'html/css', 'javascript', 'nextjs', 'tailwind' ],
+  //   img: portfolioImages['temperamentos-2.jpg'],
+  //   href: '/proyectos/temperamentos/',
+  //   url: 'https://okvianey.github.io/temperamentos/',
+  //   showHome: ''
+  // },
 ]
 

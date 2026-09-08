@@ -143,7 +143,7 @@ export default function PricingSection() {
               {plan.popular && (
                 <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-1">
                   <span className="text-default bg-yellow-200 px-4 py-3 rounded text-xs font-medium shadow-sm">
-                    Más Popular
+                    Ideal para empezar
                   </span>
                 </div>
               )}
@@ -169,7 +169,7 @@ export default function PricingSection() {
                 </div>
 
                 {/* Features */}
-                <div className="p-6 flex-1">
+                <div className="p-6 border-b border-gray-100 flex-1">
                   <ul className="space-y-3">
                     {plan.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-start space-x-3">
