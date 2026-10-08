@@ -8,40 +8,41 @@ export default function Okvianey() {
       image: "/assets/img/dia.jpg",
       alt: "LinkedIn",
       text: "LinkedIn",
-      description: "Hablemos de proyectos",
+      description: "Hablemos de aprendizaje y tecnología",
       emoji: "🤝"
-    },
-    {
-      href: "https://youtube.com/@nohomestudio",
-      image: "/assets/img/nohomestudio.jpg",
-      alt: "nohome studio",
-      text: "no home studio",
-      description: "Producimos música donde sea",
-      emoji: "🎵"
-    },
-    {
-      href: "https://flatlatte.com/",
-      image: "/assets/img/flatlatte.webp",
-      alt: "Flat Latte",
-      text: "Flat Latte",
-      description: "Sitios Web para cafeterías",
-      emoji: "💻"
     },
     {
       href: "https://okvianey.github.io/",
       image: "/assets/img/web-portfolio.webp",
       alt: "Portfolio",
       text: "Portfolio",
-      description: "English version",
-      emoji: "🌐"
+      description: "Algunos de mis proyectos",
+      emoji: "💻"
     },
+    {
+      href: "https://youtube.com/@nohomestudio",
+      image: "/assets/img/nohomestudio.jpg",
+      alt: "nohome studio",
+      text: "no home studio",
+      description: "Producimos música mapachosa",
+      emoji: "🎵"
+    },
+    // {
+    //   href: "https://flatlatte.com/",
+    //   image: "/assets/img/flatlatte.webp",
+    //   alt: "Flat Latte",
+    //   text: "Flat Latte",
+    //   description: "Sitios Web para cafeterías",
+    //   emoji: "💻"
+    // },
+    
     {
       href: "https://www.instagram.com/okvianey",
       image: "/assets/img/dia.jpg",
       alt: "Mi día a día",
       text: "Mi día a día",
       description: "Creando algo nuevo",
-      emoji: "📱"
+      emoji: "☕️"
     }
   ];
 
@@ -71,13 +72,13 @@ export default function Okvianey() {
                 </h3> */}
             <div className="text-gray-700 text-sm space-y-3">
               <p>
-                Desde 2013 combino cafeína, comunicación y tecnología para crear proyectos. Actualmente, Diseño e imparto talleres sobre tecnología, comunicación y pensamiento crítico para niños, jóvenes y adultos.
+                Después de dejar la carrera de ingeniería química para estudiar producción musical, durante mucho tiempo pensé que mis intereses tan distintos no tendrían una utilidad.
+                </p>
+              <p>
+                Hoy uso esa combinación de intereses como fortaleza. Combino mi formación como comunicóloga con mi experiencia en desarrollo web y producción multimedia para transformar temas complejos en experiencias de aprendizaje claras, prácticas y adaptadas a las necesidades de cada grupo.
               </p>
               <p>
-                Me interesa tomar algo complejo y convertirlo en algo que otras personas puedan comprender y usar. Estoy convencida de que la tecnología y el conocimiento deben potenciar el pensamiento humano, no sustituirlo.
-              </p>
-              <p>
-                Cuando no estoy enseñando, me encuentras en mi laptop construyendo webs para <strong>Flat Latte</strong> o produciendo música en <strong>no home studio</strong>.
+                Cuando no estoy diseñando un curso, me encuentras tomando café, en mi laptop produciendo música para el <strong>Mapache Intelectual</strong>.
               </p>
 
             </div>

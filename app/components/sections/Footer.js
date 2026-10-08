@@ -17,10 +17,10 @@ export default function Footer() {
           className="flex order-1 justify-evenly items-center gap-4 text-xs">
 
 
-          <ButtonHighlight url="/okvianey"
+          {/* <ButtonHighlight url="/okvianey"
           >
             Sobre mi
-          </ButtonHighlight>
+          </ButtonHighlight> */}
 
           <ButtonHighlight url="/proyectos"
           >

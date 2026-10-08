@@ -6,18 +6,8 @@ import Footer from "@/components/sections/Footer";
 
 export const metadata = {
   title: 'Flatlatte - Desarrollo Web',
-  description: 'Diseño y desarrollo web especializado para emprendedores creativos',
+  description: 'Creamos sitios bonitos para cafeterías y emprendedores.',
 };
-
-
-// const jetBrains = JetBrains_Mono({
-//   variable: "--font-mono",
-//   subsets: ["latin"],
-// });
-// const ibmPlexSans = IBM_Plex_Sans({
-//   variable: "--font-jetBrains-mono",
-//   subsets: ["latin"],
-// });
 
 const monaSans = Mona_Sans({
   variable: "--font-mona-sans",
