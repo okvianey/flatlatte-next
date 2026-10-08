@@ -20,12 +20,12 @@ export default function Okvianey() {
       emoji: "💻"
     },
     {
-      href: "https://youtube.com/@nohomestudio",
+      href: "https://youtube.com/@mapache.intelectual",
       image: "/assets/img/nohomestudio.jpg",
-      alt: "nohome studio",
-      text: "no home studio",
+      alt: "Mapache Intelectual",
+      text: "Mapache Intelectual",
       description: "Producimos música mapachosa",
-      emoji: "🎵"
+      emoji: "🎚️"
     },
     // {
     //   href: "https://flatlatte.com/",

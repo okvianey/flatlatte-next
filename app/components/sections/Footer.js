@@ -41,7 +41,7 @@ export default function Footer() {
 
         </div>
 
-        <div className="flex order-3 justify-center items-center text-2xl">
+        <div className="flex order-3 justify-center items-center text-3xl">
           <a
             className='relative inline-block group'
             href="https://wa.me/529223400366?text=Hola%21%20Me%20gustar%C3%ADa%20informaci%C3%B3n"
@@ -51,24 +51,7 @@ export default function Footer() {
             <i className="bi bi-whatsapp relative z-10 py-1 px-2" />
             <span className="absolute bottom-0 left-0 w-0 py-4  bg-yellow-200 opacity-60 transform -rotate-1 transition-all duration-300 group-hover:w-full group-hover:px-2 z-0"></span>
           </a>
-          <a
-            className='relative inline-block group'
-            href="https://www.instagram.com/okflatlatte/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <i className="bi bi-instagram relative z-10 py-1 px-2" />
-            <span className="absolute bottom-0 left-0 w-0 py-4  bg-yellow-200 opacity-60 transform -rotate-1 transition-all duration-300 group-hover:w-full group-hover:px-2 z-0"></span>
-          </a>
-          <a
-            className='relative inline-block group'
-            href="https://www.youtube.com/@nohomestudio"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <i className="bi bi-youtube relative z-10 py-1 px-2" />
-            <span className="absolute bottom-0 left-0 w-0 py-4  bg-yellow-200 opacity-60 transform -rotate-1 transition-all duration-300 group-hover:w-full group-hover:px-2 z-0"></span>
-          </a>
+         
         </div>
 
         <div className='mx-auto my-5 order-2 md:hidden w-11/12 border-t-1 boder-[var(--accent)'></div>
