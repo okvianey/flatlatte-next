@@ -72,13 +72,13 @@ export default function Okvianey() {
                 </h3> */}
             <div className="text-gray-700 text-sm space-y-3">
               <p>
-                Después de dejar la carrera de ingeniería química para estudiar producción musical, durante mucho tiempo pensé que mis intereses tan distintos no tendrían una utilidad.
+                Después de dejar la carrera de ingeniería química para estudiar producción musical, durante mucho tiempo pensé me frustré por tener intereses tan distintos.
                 </p>
               <p>
                 Hoy uso esa combinación de intereses como fortaleza. Combino mi formación como comunicóloga con mi experiencia en desarrollo web y producción multimedia para transformar temas complejos en experiencias de aprendizaje claras, prácticas y adaptadas a las necesidades de cada grupo.
               </p>
               <p>
-                Cuando no estoy diseñando un curso, me encuentras tomando café, en mi laptop produciendo música para el <strong>Mapache Intelectual</strong>.
+                Cuando no estoy diseñando un curso, me encuentras con mi laptop tomando café y produciendo música para el <strong>Mapache Intelectual</strong>.
               </p>
 
             </div>
