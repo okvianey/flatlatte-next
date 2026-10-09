@@ -72,7 +72,7 @@ export default function Okvianey() {
                 </h3> */}
             <div className="text-gray-700 text-sm space-y-3">
               <p>
-                Después de dejar la carrera de ingeniería química para estudiar producción musical, durante mucho tiempo pensé me frustré por tener intereses tan distintos.
+                Después de dejar la carrera de ingeniería química para estudiar producción musical, durante mucho tiempo me frustré por tener intereses tan distintos.
                 </p>
               <p>
                 Hoy uso esa combinación de intereses como fortaleza. Combino mi formación como comunicóloga con mi experiencia en desarrollo web y producción multimedia para transformar temas complejos en experiencias de aprendizaje claras, prácticas y adaptadas a las necesidades de cada grupo.
